@@ -29,7 +29,6 @@ public class CityService {
             cityRepository.save(new City("Santarém"));
             cityRepository.save(new City("Portel"));
             cityRepository.save(new City("Benevides"));
-            cityRepository.save(new City("Belém"));
             System.out.println("Cidades inicializadas com sucesso!");
         }
     }

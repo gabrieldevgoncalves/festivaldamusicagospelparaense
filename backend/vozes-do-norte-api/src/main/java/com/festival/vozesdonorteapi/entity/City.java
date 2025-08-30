@@ -20,14 +20,12 @@ public class City {
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Participant> participants;
 
-    // Constructors
     public City() {}
 
     public City(String name) {
         this.name = name;
     }
 
-    // Getters and Setters
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 

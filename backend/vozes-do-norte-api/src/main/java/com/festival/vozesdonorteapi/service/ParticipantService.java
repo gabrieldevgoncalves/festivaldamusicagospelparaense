@@ -24,17 +24,14 @@ public class ParticipantService {
     private CityRepository cityRepository;
 
     public ParticipantDTO createParticipant(ParticipantRequestDTO dto) {
-        // Verificar se CPF já existe
         if (participantRepository.existsByCpf(dto.getCpf())) {
             throw new RuntimeException("CPF já cadastrado");
         }
 
-        // Verificar se email já existe
         if (participantRepository.existsByEmail(dto.getEmail())) {
             throw new RuntimeException("Email já cadastrado");
         }
 
-        // Validar idade mínima e máxima
         LocalDate today = LocalDate.now();
         int age = Period.between(dto.getBirthDate(), today).getYears();
         if (age < 12) {
@@ -44,11 +41,9 @@ public class ParticipantService {
             throw new RuntimeException("Idade máxima para participação é de 100 anos. Verifique a data informada");
         }
 
-        // Buscar cidade
         City city = cityRepository.findById(dto.getCityId())
                 .orElseThrow(() -> new RuntimeException("Cidade não encontrada"));
 
-        // Criar participante
         Participant participant = new Participant();
         participant.setName(dto.getName());
         participant.setEmail(dto.getEmail());
