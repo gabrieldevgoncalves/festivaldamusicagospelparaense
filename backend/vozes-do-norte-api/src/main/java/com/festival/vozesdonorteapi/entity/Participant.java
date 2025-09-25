@@ -49,7 +49,6 @@ public class Participant {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    // Constructors
     public Participant() {
         this.createdAt = LocalDateTime.now();
     }
@@ -59,8 +58,6 @@ public class Participant {
         createdAt = LocalDateTime.now();
     }
 
-
-    // Getters and Setters
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 
