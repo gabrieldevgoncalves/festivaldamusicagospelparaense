@@ -7,7 +7,6 @@ public class CityDTO {
     private String name;
     private Long participantCount;
 
-    // Constructors
     public CityDTO() {}
 
     public CityDTO(UUID id, String name) {
@@ -21,7 +20,6 @@ public class CityDTO {
         this.participantCount = participantCount;
     }
 
-    // Getters and Setters
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 
