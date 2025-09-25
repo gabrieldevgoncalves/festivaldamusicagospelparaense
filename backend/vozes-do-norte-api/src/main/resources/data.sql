@@ -1,4 +1,3 @@
--- Inserir cidades iniciais
 INSERT INTO cities (id, name) VALUES
     (gen_random_uuid(), 'Marabá'),
     (gen_random_uuid(), 'Santarém'),
